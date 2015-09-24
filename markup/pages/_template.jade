@@ -1,0 +1,32 @@
+doctype html
+| <!--[if IE 7]><html class="ie7 lt-ie10 lt-ie9 lt-ie8 no-js" lang="ru"><![endif]-->
+| <!--[if IE 8]><html class="ie8 lt-ie10 lt-ie9 no-js" lang="ru"><![endif]-->
+| <!--[if IE 9 ]><html class="ie9 lt-ie10 no-js" lang="ru"><![endif]-->
+| <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--<![endif]-->
+
+include ../modules/head/head
+include ../modules/header/header
+include ../modules/footer/footer
+include ../modules/script/script
+
+
+- var pages = {home:'home', goods:'goods', contact:'contact', about:'about'};
+block vars
+
+
+
+head
+	block head
+body
+
+	.wrapper
+
+		block header
+
+		block content
+
+		.footer-push
+
+	block footer
+
+	+script()

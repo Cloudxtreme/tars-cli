@@ -1,0 +1,6 @@
+mixin header(data)
+
+	nav.header-navbar
+		ul.clearfix
+			each page, i in pages
+				li(class=page===curPage?'active':''): a(href="#")= page

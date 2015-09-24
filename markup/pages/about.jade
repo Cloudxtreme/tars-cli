@@ -1,0 +1,20 @@
+extends _template
+
+block vars
+	- var curPage = pages.about;
+
+block head
+	+head(head.about)
+
+block header
+	header.main-head
+		+header()
+
+block content
+	.main-content
+		.container
+			h1 about.html block content
+
+block footer
+	footer.main-footer
+		+footer()

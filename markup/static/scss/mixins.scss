@@ -1,0 +1,112 @@
+@import 'mixins/animate';
+@import 'mixins/compass';
+
+//@import 'mixins/_bootstrap.scss';
+//@import 'mixins/_lemonade.scss';
+
+// Mixins.
+
+// You can add your own mixins here:
+//// responsive example, needs to be edited
+$break-small: 767px;
+$break-large: 768px;
+$break-large-right: 1024px;
+@mixin respond-to($media) {
+	@if $media == mobile {
+		@media only screen and (max-width: 767px) {
+			@content;
+		}
+	} @else if $media == tablet {
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			@content;
+		}
+	} @else if $media == tablet-portrait {
+		@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+			@content;
+		}
+	} @else if $media == to-tablet {
+		@media only screen and (max-width: 1024px) {
+			@content
+		}
+	} @else if $media == desc-1280 {
+		@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+			@content;
+		}
+	} @else if $media == desc-1280-1600 {
+		@media only screen and (min-width: 1281px) and (max-width: 1599px) {
+			@content;
+		}
+	} @else if $media == desc-1600 {
+		@media only screen and (min-width: 1281px) {
+			@content
+		}
+	} @else if $media == desc {
+		@media only screen and (min-width: 1025px) {
+			@content
+		}
+	}
+}
+
+@mixin nl {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	list-style: none;
+	list-style-position: outside;
+}
+
+@mixin cf {
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	.lt-ie8 & {
+		zoom: 1;
+	}
+}
+
+@mixin blocks-justify {
+	text-align: justify;
+	text-justify: newspaper;
+}
+
+@mixin selection {
+	& ::selection {
+		@content;
+	}
+	& ::-moz-selection {
+		@content;
+	}
+}
+
+@mixin calc($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}
+
+@mixin placeholder-color($color) {
+	&.placeholder {
+		color: $color;
+	}
+	&::-moz-placeholder {
+		color: $color;
+	}
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin unselectable() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

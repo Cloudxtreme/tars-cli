@@ -1,0 +1,14 @@
+// File for scss-vars.
+// For example: main colors, paddings and so on.
+
+$color-red: #daa;
+$color-blue: #add;
+$color-cyan: cyan;
+
+$roboto-black: 'RobotoBlack', sans-serif;
+
+// PLACEHOLDERS
+%h2 {
+	font: 400 32px $roboto-black;
+	text-align: center;
+}
